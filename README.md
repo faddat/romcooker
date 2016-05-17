@@ -16,7 +16,7 @@
 - [ ] Make it work on orangepi one
 - [ ] Make it work on Bananapi
 - [ ] Make it work on Bananapi R1
-- [ ] Achieve some degree of [https://github.com/igorpecovnik/lib](lib) compatiblity
+- [ ] Achieve some degree of [lib](https://github.com/igorpecovnik/lib) compatiblity
 - [ ] HTTP API for UI
 - [ ] Full image generation
 - [ ] Android Builds
