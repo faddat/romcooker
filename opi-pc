@@ -1,14 +1,34 @@
-
-description: "a small computer for $15"
-config: "https://github.com/faddat/linux"
-tags: [ "mainline, sunxi, allwinner, h3" ]
-kerneldefconfig: "sunxi_defconfig"
-ubootconfig: "sun8i_h3_orangepi_pc_defconfig"
+description: a small computer for $15
+config: https://github.com/faddat/linux
+tags: [ mainline, sunxi, allwinner, h3 ]
+kerneldefconfig: sunxi_defconfig
+ubootconfig: sun8i_h3_orangepi_pc_defconfig
 categories:
-  - "hasmainlinegpu"
-  - "VIM"
-  - "cheap"
-  - "allwinner"
+  - hasmainlinegpu
+  - VIM
+  - cheap
+  - allwinner
 env:
-  - "CROSS_COMPILE=arm-linux-gnueabihf-"
-  - "ARCH=arm"
+  - CROSS_COMPILE=arm-linux-gnueabihf-
+  - ARCH=arm
+rootfs:
+  - Rancher
+    - version 0.4.5
+    - version 0.4.4
+  - Ubuntu
+    - 16.04
+    - 14.04
+  - Arch Linux
+  - gentoo
+  - Alpine Linux
+  - Debian Linux
+    - Wheezy
+    - Jessie
+    - stretch
+    - sid
+packages:
+  - build-essential
+#DHTmagnet:
+#  -
+scripts:
+
