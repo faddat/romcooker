@@ -12,16 +12,16 @@ env:
   - CROSS_COMPILE=arm-linux-gnueabihf-
   - ARCH=arm
 rootfs:
-  - Rancher
+  Rancher:
     - version 0.4.5
     - version 0.4.4
-  - Ubuntu
+  Ubuntu:
     - 16.04
     - 14.04
   - Arch Linux
   - gentoo
   - Alpine Linux
-  - Debian Linux
+  Debian Linux:
     - Wheezy
     - Jessie
     - stretch

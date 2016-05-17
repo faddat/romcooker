@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/olebedev/config"
 	"github.com/codeskyblue/go-sh"
 	"io/ioutil"
 	"log"
@@ -18,11 +17,12 @@ func main() {
 	log.Fatal(err)
 	return err
 	}
+
 	//LISTS  THE CONFIG FILES AND PROMPTS USER TO CHOOSE A CONFIG NUMBER
 	fmt.Println("TYPE THE NUMBER OF THE ROOTFS YOU WANT TO USE. This will be made dynamic soon.")
-	for _, Confignumber <100
-	fmt.Println(Confignumber, Boardname)
-
+	for _, Confignumber := range Boardname {
+		fmt.Println(Confignumber, Boardname)
+	}
 	for _, file := range Boardname {
 		Confignumber = Confignumber + 1
 		fmt.Println(Confignumber, " ", file.Name())
@@ -79,8 +79,10 @@ session.Command("mkdir /builds/rootfses")
 session.Command("mkdir /buidls/u-boots")
 session.SetDir("/builds")
 session.Command("echo hello")
-session.Command("git clone ")
-return fmt.Println("Folder structure complete")
+//session.Command("git clone ")
+if
+log.Fatal(err)
+return err
 }
 
 
