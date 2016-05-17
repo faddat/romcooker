@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/olebedev/config"
 	"github.com/codeskyblue/go-sh"
 	"io/ioutil"
 	"log"
@@ -9,28 +10,26 @@ import (
 
 func main() {
 	//Prompts the user to ask which configuration they'd like to use
-	var confignumber int = 0
+
+	var Confignumber int = 0
 	fmt.Println("Enter the number of the board you want to build for")
-	files, err := ioutil.ReadDir("./boards")
+	Boardname, err := ioutil.ReadDir("./boards")
 	if err != nil {
 	log.Fatal(err)
 	return err
 	}
 	//LISTS  THE CONFIG FILES AND PROMPTS USER TO CHOOSE A CONFIG NUMBER
-	fmt.Println("TYPE THE NUMBER OF THE ROOTFS YOU WANT TO USE. This will be made dynamic soon. ")
-	for _, e := {
-		fmt.Println(confignumber, e)
+	fmt.Println("TYPE THE NUMBER OF THE ROOTFS YOU WANT TO USE. This will be made dynamic soon.")
+	for _, Confignumber <100
+	fmt.Println(Confignumber, Boardname)
+
+	for _, file := range Boardname {
+		Confignumber = Confignumber + 1
+		fmt.Println(Confignumber, " ", file.Name())
 	}
-	for _, file := range files {
-		t = t + 1
-		fmt.Println(t, " ", file.Name())
-		var e []t
-	}
 
-	go FolderStructure
-	go ParseYamlFile
-
-
+	go FolderStructure()
+//	go Parse()
 
 	//Goroutines fetch the neeeded files
 	go Ubuntu()
@@ -39,19 +38,14 @@ func main() {
 	go Pecovnik()
 	}
 
-	app.Run(os.Args)
-}
 
 //Downloads an ubuntu rootfs
-func Ubuntu()
-	{
+func Ubuntu(){
 	sh.Command("wget http://cdimage.ubuntu.com/ubuntu-core/xenial/daily-preinstalled/current/xenial-preinstalled-core-armhf.device.tar.gz")
-	}
-
+}
 
 //Downloads a Debian rootfs
-func Debian()
-	 {
+func Debian(){
 	sh.Command("wget https://rcn-ee.com/rootfs/2016-04-07/elinux/debian-8.4-console-armhf-2016-04-07.tar.xz")
 	}
 
@@ -67,15 +61,17 @@ func Pecovnik(){
 	sh.Command("")
 }
 
-func ParseYamlFile(filename string) (*Config, error)
-
+//
+//	config.ParseYamlFile()(filename
+//	string) (*Config, error)
+//}
 
 //BUILDS OUT THE FOLDER STRUCTURE NEEDED FOR BUILDING
-func FolderStructure
+func FolderStructure(){
 session := sh.NewSession()
 session.ShowCMD = true
 session.Command("mkdir /builds && echo [ OK ] || 'echo [ OK }' ")
-session.Command("mkdir /builds/boards || echo '/builds/boards already present [ OK ]' )
+session.Command("mkdir /builds/boards || echo '/builds/boards already present [ OK ]' " )
 session.Command("mkdir /builds/images || echo '[ OK ]' ")
 session.Command("mkdir /builds/kernels")
 session.Command("mkdir /builds/u-boots")
@@ -84,7 +80,7 @@ session.Command("mkdir /buidls/u-boots")
 session.SetDir("/builds")
 session.Command("echo hello")
 session.Command("git clone ")
-return err
-
+return fmt.Println("Folder structure complete")
+}
 
 
