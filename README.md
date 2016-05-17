@@ -8,7 +8,7 @@
  * orangepi one
  * Bananapi a20 series
  * Bananapi R1
- * Anything that you provide a YAML file for!  (Though technically right now there's a sunxi-dependent process.)
+ * Anything that you provide a YAML build description file for!
  
  
  ### Roadmap
