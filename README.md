@@ -13,10 +13,10 @@
  
  ### Roadmap
  
-- [] HTTP API for UI
-- [] Full image generation
-- [] Android Builds
-- [] More Linux Distributions
-- [] SaaS ROM Builds as a service for mobile devices
+-[] HTTP API for UI
+-[] Full image generation
+-[] Android Builds
+-[] More Linux Distributions
+-[] SaaS ROM Builds as a service for mobile devices
  
  
