@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/olebedev/config"
 	"flag"
+	"fmt"
+	"github.com/olebedev/config"
 )
 
 type Configuration interface {
@@ -12,8 +13,8 @@ type Configuration interface {
 /*
 Initialize Configuration
 Defines some configuration options in a global variable
- */
- 
+*/
+
 var CFG *config.Config
 
 func loadConfig() {
@@ -21,13 +22,13 @@ func loadConfig() {
 	flag.StringVar(&configPath, "config", "", "The path to configuration")
 	flag.Parse()
 	if configPath == "" {
-		Error.Panic("No config specified")
+		panic("No config specified")
 	}
 	config, err := config.ParseYamlFile(configPath)
 	if err != nil {
-		Error.Println(err.Error())
+		fmt.Println(err.Error())
 		return
 	}
-	Println("config loaded from " + configPath)
+	fmt.Println("config loaded from " + configPath)
 	CFG = config.Flag()
 }
