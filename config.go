@@ -13,6 +13,7 @@ type Configuration interface {
 Initialize Configuration
 Defines some configuration options in a global variable
  */
+ 
 var CFG *config.Config
 
 func loadConfig() {
@@ -27,6 +28,6 @@ func loadConfig() {
 		Error.Println(err.Error())
 		return
 	}
-	Info.Println("config loaded from " + configPath)
+	Println("config loaded from " + configPath)
 	CFG = config.Flag()
 }
